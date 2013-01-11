@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "
+http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict...">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link type="text/css" href="../WebWrapper/js/jquery-ui.css" rel="Stylesheet" />
+        <script type="text/javascript" src="../WebWrapper/js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="../WebWrapper/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="arel_2.1_min.js"></script>
+        <script type="text/javascript" src="arelGlue6.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                              $( "#radio" ).buttonset();
+                              $("#radio input").bind("click",function(){clickHandler();});
+                              });
+            </script>
+        <script type=text/javascript>
+            $(function(){
+              $(window).resize(function(e){
+                               placeButtonBar();
+                               });
+              placeButtonBar();
+              // hide it before it's positioned
+              $('#radio').css('display','inline');
+              });
+            
+            function placeButtonBar() {
+                    var windHeight = $(window).height();
+                    var buttonBarHeight = $('#radio').height();
+                    var offset = parseInt(windHeight) - parseInt(buttonBarHeight);
+                    $('#radio').css('top',offset);
+                    $('#radio').css('right',30);
+                    $('#radio').css('margin','-20px 0 0 0');   
+            }
+            </script>
+        <title>Transparency Test</title>
+    	<style type="text/css">
+            * {
+                -webkit-highlight:           none;
+                -webkit-touch-callout :      none;
+                -webkit-user-select:         none;
+            }
+            
+            body {
+                margin: 0px;
+                padding: 0;
+                -webkit-text-size-adjust: 100%;
+                background-color:transparent;
+            }
+            
+            #radio
+            {
+                position: absolute;
+                display: none;
+                
+            }
+            </style>
+  		
+    	<title>Getting Started GLUE 3</title>
+    </head>
+	<body>
+        <form>
+            <div id="radio">
+                <input type="radio" id="radio1" name="radio" /><label for="radio1" style="font-size:small;">Instant 2D</label>
+                <input type="radio" id="radio2" name="radio" /><label for="radio2" style="font-size:small;">2D Rectified</label>
+                <input type="radio" id="radio3" name="radio" /><label for="radio3" style="font-size:small;">Instant 3D</label>
+            </div>
+        </form>
+	</body>
+</html>
